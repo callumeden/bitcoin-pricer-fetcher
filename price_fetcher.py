@@ -2,6 +2,7 @@ import requests
 import datetime
 import functools
 import csv
+import ntpath
 
 class PriceFetcher:
 
@@ -14,9 +15,11 @@ class PriceFetcher:
 
 
 	def write_csv_with_price_data(self, file_path):
+		file_name = ntpath.basename(file_path)
+
 		print('do csv for file path', file_path)
 		with open(file_path, 'r') as in_file:
-			with open('./output/' + file_path, 'w') as out_file:
+			with open('./output/' + file_name +'-price-data', 'w') as out_file:
 
 				reader = csv.reader(in_file)
 				writer = csv.writer(out_file)

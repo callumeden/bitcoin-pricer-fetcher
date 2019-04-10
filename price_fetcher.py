@@ -14,12 +14,12 @@ class PriceFetcher:
 		self.coindesk_historic_endpoint = 'https://api.coindesk.com/v1/bpi/historical/close.json'
 
 
-	def write_csv_with_price_data(self, file_path):
+	def write_csv_with_price_data(self, file_path, output_path):
 		file_name = ntpath.basename(file_path)
 
 		print('do csv for file path', file_path)
 		with open(file_path, 'r') as in_file:
-			with open('./output/' + file_name +'-price-data', 'w') as out_file:
+			with open(output_path + '/' + file_name, 'w') as out_file:
 
 				reader = csv.reader(in_file)
 				writer = csv.writer(out_file)

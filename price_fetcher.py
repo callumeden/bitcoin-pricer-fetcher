@@ -82,7 +82,7 @@ class PriceFetcher:
 		"""
 		Fetches price data for all 3 currencies for current date + 5 days following
 		"""
-		prefetch_days = 5
+		prefetch_days = 500
 
 		fetch_until = date + datetime.timedelta(days=prefetch_days)
 		print('fetching data for date begining {} until {}'.format(date, fetch_until))
